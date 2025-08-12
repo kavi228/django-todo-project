@@ -1,1 +1,2 @@
-Django todo project
+# Django todo project
+Hello World
