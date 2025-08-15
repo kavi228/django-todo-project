@@ -9,8 +9,14 @@
   </title>
 </head>
 <body>
+  {% include 'components/navbar.html' %}
   {% block body %}
       Baze body
   {% endblock body %}
+  <footer>
+    {% block footer %}
+      First pet-project
+    {% endblock footer %}
+  </footer>
 </body>
 </html>

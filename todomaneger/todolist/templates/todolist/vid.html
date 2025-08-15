@@ -1,0 +1,23 @@
+{% extends 'todolist/baze.html' %}
+
+{% block title %}
+  App для грокнутых
+{% endblock title %}
+
+{% block body %}
+  <h1> ТуДу лист </h1>
+  <h2>Дела на сегодня:</h2>
+  <ul>
+    {% for todoitem in todoitems %}
+      <li>
+        {{todoitem.title}}
+        {% if todoitem.done %}
+          ✔️
+        {% else %}
+          ❌
+        {% endif %}
+      </li>
+    {% endfor %}
+
+  </ul>
+{% endblock body %}
