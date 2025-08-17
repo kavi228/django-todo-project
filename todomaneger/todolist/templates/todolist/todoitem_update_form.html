@@ -1,0 +1,17 @@
+{% extends 'todolist/baze.html' %}
+
+{% block title %}
+  Изменить {{ object.title }}
+{% endblock title %}
+
+{% block body %}
+  <h2>Изменить {{ object.title }}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Изменить">
+  </form>
+  <div>
+    <a href="{% url 'todolist:detail' object.pk %}">Вернуться назад</a>
+  </div>
+{% endblock body %}

@@ -6,16 +6,20 @@
 
 {% block body %}
   <h1> ТуДу лист </h1>
+  <ul>
+    <li><a href="{% url 'todolist:create' %}">Добавить дело</a></li>
+  </ul>
   <h2>Дела на сегодня:</h2>
   <ul>
     {% for todoitem in todoitems %}
       <li>
-        {{todoitem.title}}
+        <a href ="{% url 'todolist:detail' todoitem.pk %}">{{todoitem.title}}
         {% if todoitem.done %}
           ✔️
         {% else %}
           ❌
         {% endif %}
+        </a>
       </li>
     {% endfor %}
 
